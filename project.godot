@@ -11,9 +11,27 @@ config_version=5
 [application]
 
 config/name="Angry Animals"
-run/main_scene="res://Scenes/Tester/Tester.tscn"
+run/main_scene="res://Scenes/Level/level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Managers/GameManager.gd"
+ScoreManager="*res://Managers/ScoreManager.gd"
+SignalManager="*res://Managers/SignalManager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[input]
+
+drag={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(657, 47),"global_position":Vector2(665, 127),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
 
 [rendering]
 

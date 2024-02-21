@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgiwglxdgj2y5"]
+
+[ext_resource type="Texture2D" uid="uid://bei1jv6mmja11" path="res://assets/env/elementWood015.png" id="1_adkhw"]
+[ext_resource type="Texture2D" uid="uid://br6blvfk63rvd" path="res://assets/env/elementWood004.png" id="2_a7fis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j84lp"]
+size = Vector2(4.81658, 100.829)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvgxo"]
+size = Vector2(22.449, 10.9091)
+
+[node name="Cup" type="RigidBody2D"]
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -21)
+scale = Vector2(1, 0.354564)
+texture = ExtResource("1_adkhw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-75, -68)
+texture = ExtResource("2_a7fis")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(75, -68)
+rotation = 4.71239
+texture = ExtResource("2_a7fis")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-74.3235, -67.2939)
+skew = -0.776672
+shape = SubResource("RectangleShape2D_j84lp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(74.6356, -67.6643)
+rotation = 1.55334
+skew = -0.776672
+shape = SubResource("RectangleShape2D_j84lp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(4.29153e-06, -21)
+scale = Vector2(9.8, 2.2)
+shape = SubResource("RectangleShape2D_qvgxo")
