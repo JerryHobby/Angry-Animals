@@ -3,6 +3,7 @@ extends RigidBody2D
 @onready var label = $Label
 @onready var stretch_sound = $StretchSound
 @onready var arrow = $Arrow
+@onready var kick_sound = $KickSound
 @onready var launch_sound = $LaunchSound
 
 
@@ -19,6 +20,7 @@ var _drag_start = Vector2.ZERO
 var _dragged_vector = Vector2.ZERO
 var _last_dragged_vector = Vector2.ZERO
 var _arrow_scale_x = 0.0
+var _last_collision_count = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -48,14 +50,14 @@ func update(delta):
 			update_drag(delta)
 			
 		ANIMAL_STATE.RELEASE:
-			update_release(delta)
+			update_flight(delta)
 			
 		_:
 			print("Invalid animal_state")
 			pass
 
 
-func update_ready(delta):
+func update_ready(_delta):
 	pass
 
 
@@ -92,7 +94,7 @@ func dragged_in_limits():
 	position = _start + _dragged_vector
 
 
-func update_drag(delta):
+func update_drag(_delta):
 	if detect_release():
 		return
 
@@ -103,8 +105,17 @@ func update_drag(delta):
 	scale_arrow()
 
 
+func play_collision():
+	if _last_collision_count == 0 \
+	and get_contact_count() > 0 \
+	and kick_sound.playing == false:
+		kick_sound.play()
+		
+	_last_collision_count = get_contact_count()
+	
 
-func update_release(delta):
+func update_flight(_delta):
+	play_collision()
 	pass
 
 
@@ -146,9 +157,16 @@ func die():
 	queue_free()
 
 
-func _on_input_event(viewport, event:InputEvent, shape_idx):
+func _on_input_event(_viewport, event:InputEvent, _shape_idx):
 	if _state == ANIMAL_STATE.READY \
 	and event.is_action_pressed("drag"):
 		set_state(ANIMAL_STATE.DRAG)
 
+
+func _on_sleeping_state_changed():
+	var cb = get_colliding_bodies()
+	if cb.size() > 0:
+		cb[0].die()
+		
+	call_deferred("die")
 

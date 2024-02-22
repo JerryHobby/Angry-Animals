@@ -17,5 +17,5 @@ extends Area2D
 		#water_direction = DIRECTION.LEFT
 #
 #
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	splash.play()

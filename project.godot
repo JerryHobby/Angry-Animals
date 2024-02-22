@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="Angry Animals"
-run/main_scene="res://Scenes/Level/level.tscn"
+run/main_scene="res://Scenes/Main/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://Managers/GameManager.gd"
-ScoreManager="*res://Managers/ScoreManager.gd"
-SignalManager="*res://Managers/SignalManager.gd"
+GameManager="*res://Singletons/GameManager.gd"
+ScoreManager="*res://Singletons/ScoreManager.gd"
+SignalManager="*res://Singletons/SignalManager.gd"
 
 [display]
 

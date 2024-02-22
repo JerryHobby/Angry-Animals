@@ -1,7 +1,7 @@
 extends Node2D
 const ANIMAL = preload("res://Scenes/Animal/animal.tscn")
 @onready var animal_start_marker = $AnimalStartMarker
-
+const MAIN = preload("res://Scenes/Main/main.tscn")
 var animal
 
 
@@ -14,8 +14,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time 
 # since the previous frame.
-func _process(delta):
-	pass
+func _process(_delta):
+	if Input.is_key_pressed(KEY_ESCAPE):
+		get_tree().change_scene_to_packed(MAIN)
 
 
 func on_animal_died():
@@ -23,8 +24,9 @@ func on_animal_died():
 
 
 func add_animal():
-	var animal = ANIMAL.instantiate()
-	animal.position = animal_start_marker.position
-	add_child(animal)
+	var new_animal = ANIMAL.instantiate()
+	new_animal.position = animal_start_marker.position
+	add_child(new_animal)
 
 	return animal
+
