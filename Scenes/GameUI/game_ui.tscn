@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhi4ed48c6tjr"]
+
+[ext_resource type="Script" path="res://Scenes/GameUI/game_ui.gd" id="1_lbuol"]
+[ext_resource type="LabelSettings" uid="uid://6tsbsuml8q2k" path="res://assets/label_48_blue.tres" id="1_q3kye"]
+[ext_resource type="LabelSettings" uid="uid://drvu0fpg0ot7" path="res://assets/label_96_blue.tres" id="3_rq5r6"]
+[ext_resource type="LabelSettings" uid="uid://cmtxx5wx5psl1" path="res://assets/label_96_light_blue.tres" id="4_kchg4"]
+[ext_resource type="AudioStream" uid="uid://dfe0eliegmunk" path="res://assets/audio/jazzyfrenchy.mp3" id="5_tfiq6"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_lbuol")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level 0"
+label_settings = ExtResource("1_q3kye")
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Score 0
+"
+label_settings = ExtResource("1_q3kye")
+
+[node name="LevelCompleteBox" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LevelCompleteLabel" type="Label" parent="MarginContainer/LevelCompleteBox"]
+layout_mode = 2
+text = "Level Complete"
+label_settings = ExtResource("3_rq5r6")
+horizontal_alignment = 1
+
+[node name="PressSpaceLabel" type="Label" parent="MarginContainer/LevelCompleteBox"]
+layout_mode = 2
+text = "Press Space"
+label_settings = ExtResource("4_kchg4")
+horizontal_alignment = 1
+
+[node name="LevelCompleteAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tfiq6")

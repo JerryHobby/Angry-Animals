@@ -27,7 +27,12 @@ var _last_collision_count = 0
 func _ready():
 	_start = position
 	_arrow_scale_x = arrow.scale.x
+	SignalManager.on_level_completed.connect(on_level_completed)
 	pass # Replace with function body.
+
+
+func on_level_completed():
+	queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

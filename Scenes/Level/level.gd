@@ -15,8 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time 
 # since the previous frame.
 func _process(_delta):
-	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().change_scene_to_packed(MAIN)
+	pass
 
 
 func on_animal_died():
@@ -29,4 +28,3 @@ func add_animal():
 	add_child(new_animal)
 
 	return animal
-

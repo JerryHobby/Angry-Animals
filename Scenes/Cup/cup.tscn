@@ -70,7 +70,7 @@ polygon = PackedVector2Array(-54, 18, -54, -53, -18, -17, 19, -17, 54, -53, 55, 
 
 [node name="VanishSound" type="AudioStreamPlayer2D" parent="."]
 
-[node name="Animation2D" type="AnimationPlayer" parent="."]
+[node name="Animation2D" type="AnimationPlayer" parent="." groups=["cup"]]
 libraries = {
 "": SubResource("AnimationLibrary_subj1")
 }
