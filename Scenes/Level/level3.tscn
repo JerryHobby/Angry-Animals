@@ -16,9 +16,9 @@ position = Vector2(684, 540)
 position = Vector2(1044, 324)
 
 [node name="Barrier" parent="." index="8" instance=ExtResource("3_2lhpq")]
-position = Vector2(1106, 159)
+position = Vector2(1081, 170)
 rotation = -0.398792
 
 [node name="Barrier2" parent="." index="9" instance=ExtResource("3_2lhpq")]
-position = Vector2(541, 384)
-rotation = -0.74321
+position = Vector2(525, 382)
+rotation = -0.854887

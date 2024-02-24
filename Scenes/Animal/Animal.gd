@@ -170,8 +170,15 @@ func _on_input_event(_viewport, event:InputEvent, _shape_idx):
 
 func _on_sleeping_state_changed():
 	var cb = get_colliding_bodies()
+
 	if cb.size() > 0:
 		cb[0].die()
 		
 	call_deferred("die")
+
+
+
+func _on_body_entered(body):
+	var is_cup = ("item_type" in body)
+	#print(is_cup)
 

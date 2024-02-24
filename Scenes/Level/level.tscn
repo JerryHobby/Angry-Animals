@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bupjqcdgvlg32"]
+[gd_scene load_steps=7 format=3 uid="uid://bupjqcdgvlg32"]
 
 [ext_resource type="Texture2D" uid="uid://d217615w3lksb" path="res://assets/scene/colored_castle.png" id="1_6rtck"]
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_ulul1"]
 [ext_resource type="PackedScene" uid="uid://b5ge0dns2r4pk" path="res://Scenes/Water/water.tscn" id="2_en1to"]
 [ext_resource type="PackedScene" uid="uid://du54wfnln56ui" path="res://Scenes/Scorer/scorer.tscn" id="4_k0nwo"]
 [ext_resource type="PackedScene" uid="uid://dhi4ed48c6tjr" path="res://Scenes/GameUI/game_ui.tscn" id="5_yulbk"]
+[ext_resource type="Texture2D" uid="uid://cue774gni5c16" path="res://assets/env/elementStone025.png" id="6_ydclo"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ulul1")
@@ -28,3 +29,19 @@ position = Vector2(-1.00015, 673)
 scale = Vector2(1.15, 1)
 
 [node name="Scorer" parent="." instance=ExtResource("4_k0nwo")]
+
+[node name="ElementStone025" type="Sprite2D" parent="."]
+position = Vector2(45, 483.5)
+scale = Vector2(0.271429, 0.459091)
+texture = ExtResource("6_ydclo")
+
+[node name="ElementStone027" type="Sprite2D" parent="."]
+position = Vector2(105, 524)
+rotation = 1.57079
+scale = Vector2(0.271429, 0.459091)
+texture = ExtResource("6_ydclo")
+
+[node name="ElementStone026" type="Sprite2D" parent="."]
+position = Vector2(165, 506)
+scale = Vector2(0.271429, 0.247727)
+texture = ExtResource("6_ydclo")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dr103fu2fihko"]
 
-[ext_resource type="Script" path="res://Animal.gd" id="1_aqfks"]
+[ext_resource type="Script" path="res://Scenes/Animal/Animal.gd" id="1_20leo"]
 [ext_resource type="Texture2D" uid="uid://brdt1coa8t85l" path="res://assets/player/parrot.png" id="2_pmtvv"]
 [ext_resource type="Texture2D" uid="uid://bturnfuymc2bm" path="res://assets/items/arrow.png" id="3_4suxh"]
 [ext_resource type="AudioStream" uid="uid://be5s2hcr2eeuf" path="res://assets/audio/stretch2.ogg" id="4_uokc7"]
@@ -20,7 +20,7 @@ freeze = true
 max_contacts_reported = 1
 contact_monitor = true
 angular_damp = 5.611
-script = ExtResource("1_aqfks")
+script = ExtResource("1_20leo")
 
 [node name="Animal" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
@@ -34,6 +34,7 @@ position = Vector2(0, 1.90735e-06)
 scale = Vector2(2, 2)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -25.0
 offset_top = -56.0
 offset_right = 38.0
@@ -60,6 +61,7 @@ stream = ExtResource("5_h6n5u")
 [node name="KickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_d0efr")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

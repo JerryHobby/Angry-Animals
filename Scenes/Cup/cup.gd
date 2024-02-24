@@ -1,6 +1,8 @@
 extends StaticBody2D
 @onready var animation_2d = $Animation2D
 
+@export var item_type="cup"
+
 func die():
 	animation_2d.play("vanish")
 

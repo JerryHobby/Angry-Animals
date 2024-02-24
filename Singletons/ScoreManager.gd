@@ -2,11 +2,12 @@ extends Node
 
 var _level_selected:int = 0
 var _level_scores = {}
-const DEFAULT_SCORE = 1000
+const DEFAULT_SCORE = 999
 const SCORES_PATH = "user://animals.dat"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#reset_scores()
 	load_from_disk()
 
 
@@ -45,6 +46,11 @@ func save_to_disk():
 	var score_json_str = JSON.stringify(_level_scores)
 	file.store_string(score_json_str)
 	file.close()
+
+
+func reset_scores():
+	_level_scores = {}
+	save_to_disk()
 
 
 func load_from_disk():

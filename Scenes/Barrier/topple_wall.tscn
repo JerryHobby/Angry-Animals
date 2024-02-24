@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://l6rtji11mwff"]
+
+[ext_resource type="Texture2D" uid="uid://bei1jv6mmja11" path="res://assets/env/elementWood015.png" id="1_80q4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo01e"]
+size = Vector2(9.65079, 20)
+
+[node name="ToppleWall" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+rotation = -1.57544
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(1.48, 0.2)
+texture = ExtResource("1_80q4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0.00230676, 3.06107e-08)
+scale = Vector2(33.7797, 0.633821)
+shape = SubResource("RectangleShape2D_yo01e")

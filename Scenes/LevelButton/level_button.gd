@@ -13,12 +13,11 @@ var level_scene: PackedScene
 func _ready():
 	level_label.text = str(level_number)
 	level_scene = load("res://Scenes/Level/level%s.tscn" % level_number)
-	score_label.text = str(ScoreManager.get_best_for_level(str(level_number)))
+	score_label.text = "Best: %s" % str(ScoreManager.get_best_for_level(str(level_number)))
 
 func _on_pressed():
 	ScoreManager.set_level_selected(level_number)
 	get_tree().change_scene_to_packed(level_scene)
-
 
 
 func _on_mouse_entered():

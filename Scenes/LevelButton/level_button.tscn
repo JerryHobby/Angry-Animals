@@ -6,17 +6,8 @@
 [ext_resource type="LabelSettings" uid="uid://b2x5asif50yj0" path="res://assets/label_44_white.tres" id="3_i3od0"]
 
 [node name="LevelButton" type="TextureButton"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 100.0
+offset_bottom = 100.0
 pivot_offset = Vector2(50, 50)
 texture_normal = ExtResource("1_l68qo")
 script = ExtResource("2_4a35e")
@@ -43,7 +34,7 @@ horizontal_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "9999
+text = "100
 "
 label_settings = ExtResource("3_i3od0")
 horizontal_alignment = 1

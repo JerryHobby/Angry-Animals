@@ -52,8 +52,8 @@ script = ExtResource("1_iyy8y")
 scale = Vector2(0.5, 0.5)
 
 [node name="Base" type="Sprite2D" parent="Sprites"]
-position = Vector2(3.75509e-06, 0)
-scale = Vector2(0.981818, 1)
+position = Vector2(3.75509e-06, -17.5)
+scale = Vector2(0.981818, 0.5)
 texture = ExtResource("1_adkhw")
 
 [node name="Left" type="Sprite2D" parent="Sprites"]
@@ -66,7 +66,7 @@ texture = ExtResource("2_a7fis")
 flip_h = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-54, 18, -54, -53, -18, -17, 19, -17, 54, -53, 55, 17)
+polygon = PackedVector2Array(-54, 1, -54, -53, -18, -17, 19, -17, 54, -53, 55, 0)
 
 [node name="VanishSound" type="AudioStreamPlayer2D" parent="."]
 

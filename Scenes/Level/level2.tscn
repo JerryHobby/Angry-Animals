@@ -9,4 +9,4 @@
 position = Vector2(436, 361)
 
 [node name="Cup2" parent="." index="4" instance=ExtResource("2_vyuyv")]
-position = Vector2(647, 285)
+position = Vector2(711, 285)
